@@ -40,32 +40,61 @@ const next = document.querySelector('.next');
 
 next.addEventListener('click', function() {
     //verifico l'elemento attivo (itemActive)
+    if (itemActive < items.length - 1) {
+        //rimuovo la class active al precendente elemento dell'array items e dell'array circles
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
     
-    //rimuovo la class active al precendente elemento dell'array items
-    items[itemActive].classList.remove('active');
-    circles[itemActive].classList.remove('active');
+        //incremento il suo valore di 1
+        ++itemActive;
+    
+        //aggiungo la class active al nuovo elemento dell'array items e dell'array circles
+        items[itemActive].classList.add('active');
+        circles[itemActive].classList.add('active');
+    }
 
-    //incremento il suo valore di 1
-    ++itemActive;
-
-    //aggiungola class active al nuovo elemento dell'array items
-    items[itemActive].classList.add('active');
-    circles[itemActive].classList.add('active');
+    else {
+         //rimuovo la class active al precendente elemento dell'array items e dell'array circles
+         items[itemActive].classList.remove('active');
+         circles[itemActive].classList.remove('active');
+     
+         //imposto il valore al primo elemento dell'array items
+         itemActive = 0;
+     
+         //aggiungo la class active al nuovo elemento dell'array items e dell'array circles
+         items[itemActive].classList.add('active');
+         circles[itemActive].classList.add('active');
+    }
+    
 });
 
 prev.addEventListener('click', function() {
     //verifico l'elemento attivo (itemActive)
+    if (itemActive > 0) {
+        //rimuovo la class active al precendente elemento dell'array items e dell'array circles
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
+    
+        //decremento il suo valore di 1
+        --itemActive;
+    
+        //aggiungo la class active al nuovo elemento dell'array items e dell'array circles
+        items[itemActive].classList.add('active');
+        circles[itemActive].classList.add('active');
+    }
 
-    //rimuovo la class active al precendente elemento dell'array items
-    items[itemActive].classList.remove('active');
-    circles[itemActive].classList.remove('active');
-
-    //decremento il suo valore di 1
-    --itemActive;
-
-    //aggiungola class active al nuovo elemento dell'array items
-    items[itemActive].classList.add('active');
-    circles[itemActive].classList.add('active');
+    else {
+        //rimuovo la class active al precendente elemento dell'array items e dell'array circles
+        items[itemActive].classList.remove('active');
+        circles[itemActive].classList.remove('active');
+    
+        //imposto il valore all'ultimo elemento dell'array items
+        itemActive = items.length - 1;
+    
+        //aggiungo la class active al nuovo elemento dell'array items e dell'array circles
+        items[itemActive].classList.add('active');
+        circles[itemActive].classList.add('active');
+    }
 });
 
 
