@@ -53,6 +53,7 @@ next.addEventListener('click', function() {
         circles[itemActive].classList.add('active');
     }
 
+    //ciclo infinito del carosello per il tasto next
     else {
          //rimuovo la class active al precendente elemento dell'array items e dell'array circles
          items[itemActive].classList.remove('active');
@@ -83,6 +84,7 @@ prev.addEventListener('click', function() {
         circles[itemActive].classList.add('active');
     }
 
+    //ciclo infinito del carosello per il tasto prev
     else {
         //rimuovo la class active al precendente elemento dell'array items e dell'array circles
         items[itemActive].classList.remove('active');
@@ -96,5 +98,3 @@ prev.addEventListener('click', function() {
         circles[itemActive].classList.add('active');
     }
 });
-
-
